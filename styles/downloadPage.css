@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'spektrun'; 
-    src: url('../assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'titles1'; 
-    src: url('../assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
 }
 
 @font-face {
@@ -25,7 +25,7 @@
 
 @font-face {
     font-family: 'buttonText'; 
-    src: url('../assets/fonts/zmore/TS\ Block\ Bold.ttf'); 
+    src: url('../assets/fonts/zmore/TSBlockBold.ttf'); 
 }
 
 
@@ -103,7 +103,7 @@ hr{
 }
 
 #catAndroid .titleDiv{
-    background-image: url(../assets/images/downloadsImages/android-wallpaper.jpg);
+    background-image: url(/assets/images/downloadsImages/android-wallpaper.jpg);
 }
 
 

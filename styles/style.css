@@ -1,28 +1,32 @@
 @font-face {
     font-family: 'spektrun'; 
-    src: url('../assets/fonts/zmore/Akira Expanded Demo.otf');
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
 }
-  
+
 @font-face {
     font-family: 'nofex'; 
-    src: url('../assets/fonts/zaditionalz/Nofex.otf');
+    src: url('../assets/fonts/zaditionalz/Nofex.otf'); 
 }
-  
+
 @font-face {
     font-family: 'titles1'; 
-    src: url('../assets/fonts/zmore/Akira Expanded Demo.otf');
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
 }
-  
+
 @font-face {
     font-family: 'titles2'; 
-    src: url('../assets/fonts/zmore/StretchPro.otf');
+    src: url('../assets/fonts/zmore/StretchPro.otf'); 
 }
-  
+
 @font-face {
     font-family: 'text1'; 
-    src: url('../assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf');
+    src: url('../assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf'); 
 }
-  
+
+@font-face {
+    font-family: 'buttonText'; 
+    src: url('../assets/fonts/zmore/TSBlockBold.ttf'); 
+}
 
 
 body{
