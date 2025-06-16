@@ -1,31 +1,31 @@
 @font-face {
     font-family: 'spektrun'; 
-    src: url('../Assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+    src: url('../assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
 }
 
 @font-face {
     font-family: 'nofex'; 
-    src: url('../Assets/fonts/zaditionalz/Nofex.otf'); 
+    src: url('../assets/fonts/zaditionalz/Nofex.otf'); 
 }
 
 @font-face {
     font-family: 'titles1'; 
-    src: url('../Assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+    src: url('../assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
 }
 
 @font-face {
     font-family: 'titles2'; 
-    src: url('../Assets/fonts/zmore/StretchPro.otf'); 
+    src: url('../assets/fonts/zmore/StretchPro.otf'); 
 }
 
 @font-face {
     font-family: 'text1'; 
-    src: url('../Assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf'); 
+    src: url('../assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf'); 
 }
 
 @font-face {
     font-family: 'buttonText'; 
-    src: url('../Assets/fonts/zmore/TS\ Block\ Bold.ttf'); 
+    src: url('../assets/fonts/zmore/TS\ Block\ Bold.ttf'); 
 }
 
 
@@ -103,7 +103,7 @@ hr{
 }
 
 #catAndroid .titleDiv{
-    background-image: url(../Assets/images/downloadsImages/android-wallpaper.jpg);
+    background-image: url(../assets/images/downloadsImages/android-wallpaper.jpg);
 }
 
 
