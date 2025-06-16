@@ -1,0 +1,6 @@
+
+canvas {
+    position: absolute;
+    left: -30; /* Position canvas to the right */
+    border-radius: 50%;
+}

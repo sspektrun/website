@@ -1,0 +1,96 @@
+footer {
+    background-color: black;
+    
+}
+
+footer #first-part{
+    margin-top: 13%;
+    text-align: center;
+    background-color: rgb(42, 42, 42);
+    padding: 30px;
+    color: white;
+}
+
+footer #second-part{
+    background-color: black;
+    padding: 30px;
+    box-shadow: 0px 0px 10px black;
+    text-align: center;
+    filter: blur(3px);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.3s;
+}
+
+footer #second-part:hover{
+    filter: blur(0px);
+}
+
+footer #main-table img{
+    width: 30%;
+}
+
+footer #main-table{
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
+}
+
+
+
+footer #tercera-columna{
+    padding: 20px;
+}
+
+footer #tercer-apartado{
+    font-size: large;
+    background-color: rgba(0, 0, 0, 0.174) ;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.208);
+    margin: 10px;
+}
+
+footer #tercera-columna table{
+    padding: 20px;
+    text-align: right;
+}
+
+footer #primera-columna{
+    padding: 80px;
+}
+
+
+
+footer #main-table #primera-columna, footer #main-table #segunda-columna{
+    border-right: 1px solid rgba(255, 255, 255, 0.215);
+    border-right-style:dashed
+}
+
+footer #first-part a{
+    color: rgb(49, 135, 255);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.3s;
+}
+
+footer #first-part a:hover{
+    font-size: large;
+    color: white;
+}
+
+footer #second-part{
+    color: white;
+}
+
+footer #second-part a{
+    color: orange;
+    text-shadow: 0px 0px 5px orange;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.3s;
+}
+
+footer #second-part a:hover{
+    font-size: large;
+    text-shadow: 0px 0px 5px white;
+    color: white;
+}

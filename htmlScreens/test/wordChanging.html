@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Word Changer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .word-container {
+            position: relative;
+            height: 50px;
+            overflow: hidden;
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            width: 300px;
+        }
+
+        .word {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .old-word {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .fade-out {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .fade-in {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .new-word {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="word-container">
+        <div id="word" class="word">Hello</div>
+    </div>
+
+    <script>
+        const words = ["Welcome", "Explore", "Discover", "Imagine", "Create", "Innovate", "Design"];
+        
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function getRandomWord() {
+            return words[Math.floor(Math.random() * words.length)];
+        }
+
+        function updateWord() {
+            const wordElement = document.getElementById("word");
+            const newWord = getRandomWord();
+            const newColor = getRandomColor();
+
+            // Create new word element
+            const newWordElement = document.createElement("div");
+            newWordElement.textContent = newWord;
+            newWordElement.className = "word fade-in";
+            newWordElement.style.color = newColor;
+
+            // Get the word container and add the new word
+            const container = document.querySelector(".word-container");
+            container.appendChild(newWordElement);
+
+            // Animate old word out
+            wordElement.classList.remove("old-word");
+            wordElement.classList.add("fade-out");
+
+            // Animate new word in
+            setTimeout(() => {
+                newWordElement.classList.remove("fade-in");
+                newWordElement.classList.add("new-word");
+
+                // Remove old word after animation
+                wordElement.remove();
+            }, 100);
+
+            // Replace the old word with the new one
+            newWordElement.id = "word";
+        }
+
+        function startLoop() {
+            setInterval(updateWord, 2000); // Change every 2 seconds
+        }
+
+        startLoop();
+    </script>
+
+</body>
+</html>

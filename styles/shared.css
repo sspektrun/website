@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'buttonText'; 
+    src: url('../Assets/fonts/zmore/TS\ Block\ Bold.ttf'); 
+}
+
+
+body::selection{
+    background-color: #ffa500;
+}
+
+.button{
+    text-decoration: none;
+    padding: 15px;
+    padding-left: 90px;
+    padding-right: 90px;
+    color: black;
+    background-color: orange;
+    border-radius: 10px;
+    font-family: buttonText;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: #000000;
+    color: white;
+    padding-left: 130px;
+    padding-right: 130px;
+    border: 2px solid orange;
+    box-shadow: 0px 0px 20px orange;
+}
+
+#last-release{
+    margin-top: 40px;
+}
+
+#last-release .button{
+    text-decoration: none;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 2px solid orange;
+    color: orange;
+    background-color: black;
+    border-radius: 10px;
+    font-family: buttonText;
+    font-size:medium;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1);
+    transition-duration: 0.4s;
+    text-align: center;
+}
+
+#last-release .button:hover{
+    background-color: #000000;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 2px solid orange;
+    box-shadow: 0px 0px 20px orange;
+}

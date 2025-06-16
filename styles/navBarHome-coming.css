@@ -1,0 +1,83 @@
+
+@font-face {
+    font-family: 'buttons-font'; 
+    src: url('../Assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+}
+
+
+@font-face {
+    font-family: 'logo-font'; 
+    src: url('../Assets/fonts/zmore/logo/basenue.ttf'); 
+}
+
+
+#navBarMain {
+    background-color: rgb(0, 0, 0);
+    backdrop-filter: blur(50%);
+    -webkit-backdrop-filter: blur(50%);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid orange;
+    opacity: 70%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.8s;
+    z-index: 1;
+}
+
+#navBarMain:hover{
+    opacity: 100%;
+    border-bottom: 4px solid orange;
+    text-align: center;
+}
+
+
+#navBarLinks{
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin-left: 10px;
+    font-family: buttons-font;
+}
+
+.navLink{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    color: gray;
+    border-radius: 20px;
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-duration: 0.3s;
+}
+
+.navLink:hover{
+    color: orange;
+    padding: 14px;
+    text-shadow: 0px 0px 10px orange;
+}
+
+#navLinkSelected{
+    color: white;
+    padding: 10px;
+    text-shadow: 0px 0px 5px white;
+}
+
+#navLinkSelected:hover{
+    color: orange;
+    padding: 14px;
+    text-shadow: 0px 0px 10px orange;
+}
+
+#navBarImage{
+    filter: grayscale(100%);
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-duration: 0.3s;
+}
+
+#navBarTitle{
+    font-family: logo-font;
+    color: white;
+}

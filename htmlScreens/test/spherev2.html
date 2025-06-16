@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Music Visualizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+
+        /* Fullscreen Canvas */
+        #visualizer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Set behind other elements */
+            filter: blur(30px); /* Create a soft, blurry background */
+            border-radius: 50%;
+        }
+
+        /* Content on top of the visualizer */
+        .content {
+            z-index: 1; /* Content will appear above the visualizer */
+            text-align: center;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #743ad5;
+            color: white;
+            border-radius: 5px;
+        }
+
+        input[type="file"]:hover {
+            background-color: #d53a9d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Music Visualizer Canvas -->
+    <canvas id="visualizer"></canvas>
+
+    <!-- Content on top of the visualizer -->
+    <div class="content">
+        <h1>Complex Music Visualizer</h1>
+        <p>Music Visualizer with Autoplay</p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("visualizer");
+        const ctx = canvas.getContext("2d");
+
+        const audio = new Audio('Assets/music/yelena.mp3'); // Replace with your audio file path
+        audio.controls = false;
+        audio.loop = true;
+        audio.autoplay = true; // Autoplay music
+
+        // Start the audio automatically after loading
+        audio.play().catch((error) => {
+            console.error("Error playing the audio:", error);
+        });
+
+        audio.muted = true; // Initially muted (for autoplay compliance)
+        setTimeout(() => {
+            audio.muted = false; // Unmute after a small delay
+        }, 500);
+
+        // Set canvas size to fill the screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Update canvas size on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Create an audio context and analyser
+        let audioContext, analyser, source, dataArray;
+
+        setupAudioContext(audio);
+
+        function setupAudioContext(audio) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256; // Frequency data resolution (smaller for performance)
+            dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+            source = audioContext.createMediaElementSource(audio);
+            source.connect(analyser);
+            analyser.connect(audioContext.destination);
+
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            analyser.getByteFrequencyData(dataArray);
+
+            // Frequency spectrum split into three parts: bass, mids, treble
+            let bass = 0, mids = 0, treble = 0;
+            let bassRange = [0, 30];  // Bass frequencies
+            let midRange = [31, 100]; // Mid frequencies
+            let trebleRange = [101, 255]; // Treble frequencies
+
+            // Accumulate values from different frequency ranges
+            for (let i = bassRange[0]; i < bassRange[1]; i++) bass += dataArray[i];
+            for (let i = midRange[0]; i < midRange[1]; i++) mids += dataArray[i];
+            for (let i = trebleRange[0]; i < trebleRange[1]; i++) treble += dataArray[i];
+
+            bass /= bassRange[1] - bassRange[0];
+            mids /= midRange[1] - midRange[0];
+            treble /= trebleRange[1] - trebleRange[0];
+
+            // Visualize the bass, mid, and treble frequency ranges
+            drawVisualizer(bass, mids, treble);
+        }
+
+        function drawVisualizer(bass, mids, treble) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Base size of the circle (varies based on overall energy)
+            let overallEnergy = (bass + mids + treble) / 3;
+            let radius = Math.max(100, 100 + overallEnergy * 1.5); // Pulsing circle
+
+            // Draw glowing central circle
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2, radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgb(${bass * 3}, ${mids * 2}, ${treble * 4})`;
+            ctx.shadowColor = `rgb(${bass * 3}, ${mids * 3}, ${treble * 4})`;
+            ctx.shadowBlur = 10; // Reduced shadow blur for performance
+            ctx.fill();
+
+            // Visualize the bass as rotating lines around the circle
+            let bassLines = bass * 15;  // Reduced number of bass lines for performance
+            for (let i = 0; i < bassLines; i++) {
+                let angle = i * (Math.PI * 2) / bassLines;
+                let x = canvas.width / 2 + Math.cos(angle) * (radius * 1.1);
+                let y = canvas.height / 2 + Math.sin(angle) * (radius * 1.1);
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, canvas.height / 2);
+                ctx.lineTo(x, y);
+                ctx.strokeStyle = `rgb(${bass * 3}, 0, 0)`;
+                ctx.lineWidth = 1; // Thinner lines for better performance
+                ctx.stroke();
+            }
+
+            // Visualizing the mids as expanding rectangles
+            let midSquares = mids * 5; // Reduced number of squares
+            for (let i = 0; i < midSquares; i++) {
+                let angle = i * (Math.PI * 2) / midSquares;
+                let size = 10 + mids * 2; // Adjusted size
+                let x = canvas.width / 2 + Math.cos(angle) * (radius * 1.3);
+                let y = canvas.height / 2 + Math.sin(angle) * (radius * 1.3);
+                ctx.fillStyle = `rgb(0, ${mids * 3}, 0)`;
+                ctx.fillRect(x - size / 2, y - size / 2, size, size);
+            }
+
+            // Visualizing the treble as glowing dots around the edge
+            let trebleDots = treble * 10; // Reduced number of dots
+            for (let i = 0; i < trebleDots; i++) {
+                let angle = i * (Math.PI * 2) / trebleDots;
+                let radiusFactor = Math.random() * (radius * 1.5);
+                let x = canvas.width / 2 + Math.cos(angle) * radiusFactor;
+                let y = canvas.height / 2 + Math.sin(angle) * radiusFactor;
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = `rgb(0, 0, ${treble * 4})`;
+                ctx.fill();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

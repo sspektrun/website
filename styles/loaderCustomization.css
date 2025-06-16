@@ -1,0 +1,12 @@
+#loaderSkeleton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(36, 36, 36);
+    height: 100%;
+    width: 100%;
+
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-duration: 0.5s;
+}

@@ -1,0 +1,42 @@
+
+.word-container {
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 300px;
+}
+
+.word {
+    font-size: 50px;
+    font-family: nofex;
+    margin-left: 10px;
+    text-shadow: 0px 0px 10px white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.old-word {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fade-out {
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.fade-in {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.new-word {
+    transform: translateY(0);
+    opacity: 1;
+}
+

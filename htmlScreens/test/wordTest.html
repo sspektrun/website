@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotating Gradient Masked Text</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+  background: #111;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for masked text */
+.gradient-text {
+  font-size: 10rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  color: transparent;
+
+  /* Mask settings */
+  background: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  overflow: hidden;
+}
+
+/* ::before creates the animated gradient underneath the text */
+.gradient-text::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #ff0080, #7928ca, #2afadf, #ff0080);
+  animation: spin 5s linear infinite;
+
+  /* Match text shape */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+</style>
+<body>
+  <div class="text-mask">
+    <span class="text">VIBRANT</span>
+    <div class="gradient"></div>
+  </div>
+</body>
+
+
+</html>

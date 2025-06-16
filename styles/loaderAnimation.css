@@ -1,0 +1,44 @@
+.lds-heart {
+    color: #e9e9e9
+}
+
+.lds-heart,.lds-heart div, .lds-heart div:after, .lds-heart div:before {
+    box-sizing: border-box;
+}
+
+.lds-heart {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform-origin: 40px 40px;
+}
+
+.lds-heart p{
+    position: absolute;
+    font-size: 30px;
+    text-align: center;
+    animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+@keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+}

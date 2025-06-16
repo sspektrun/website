@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'spektrun'; 
+    src: url('../Assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+}
+
+@font-face {
+    font-family: 'nofex'; 
+    src: url('../Assets/fonts/zaditionalz/Nofex.otf'); 
+}
+
+@font-face {
+    font-family: 'titles1'; 
+    src: url('../Assets/fonts/zmore/Akira\ Expanded\ Demo.otf'); 
+}
+
+@font-face {
+    font-family: 'titles2'; 
+    src: url('../Assets/fonts/zmore/StretchPro.otf'); 
+}
+
+@font-face {
+    font-family: 'text1'; 
+    src: url('../Assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf'); 
+}
+
+
+body{
+    margin: 0px;
+    background-color: black;
+    background-size: cover;
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition-duration: 0.3s;
+    margin: auto;
+    font-family: Helvetica;
+    color: white;
+    
+}
+
+#backgroundVideo{
+    background-image: url(/Assets/images/Crowds/orange_crowd.jpg);
+    background-size: cover;
+    z-index: -1;
+    width: 100%;
+}
+
+#mainSkeleton{
+    border: 1px solid rgb(104, 104, 104);
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    padding-bottom: 120px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-duration: 0.3s;
+    
+}
+
+#mainSkeleton:hover{
+    border: 1px solid orange;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.1); /* Default brightness */
+    transition: filter 0.3s ease; /* Smooth brightness transition */
+}
+
+#mainSkeleton:hover #backgroundVideo {
+    filter: brightness(0.3); /* Brighter when hovered */
+}
+
+#logoSection{
+    color: white;
+    font-size: 30px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-right: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-size: contain;
+    padding: 50px;
+    text-align: center;
+}
+
+#logoSection h1{
+    font-size: 180px;
+    line-height: 0;
+    font-family: spektrun;
+    color: white;
+    margin-right: auto;
+}
+
+#logoSection h3{
+    line-height: 1;
+    font-family: spektrun;
+    color: rgb(204, 204, 204);
+}
+
+#changingWordsContainers{
+    margin-left: 10px;
+    line-height: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+#bigDiv p{
+    font-family: text1;
+}
+
+
+/*
+
+    DOWNLOAD SKELETON
+
+
+*/
+
+
+#downloadSkeleton{
+    background-color: rgb(12, 12, 12);
+    text-align: center;
+    padding: 90px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-duration: 0.3s;
+}
+
+#downloadSkeleton:hover{
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-duration: 0.3s;
+    padding: 120px;
+    border: 1px solid orange;
+    border-radius: 20px;
+}
+
+#downloadSkeleton h1{
+    font-size: 50px;
+    line-height: 0;
+    font-family: nofex;
+}
+
+#downloadSkeleton p{
+    margin-bottom: 50px;
+    color: gray;
+}
+
+
+/*
+
+    ABOUT SKELETON
+
+
+*/
+
+#aboutSkeleton{
+    background-color: #f5a623;
+    padding: 20px;
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition-duration: 0.3s;
+    color: black
+}
+
+#aboutSkeleton h1{
+    font-size: 90px;
+    font-family: spektrun;
+    color: black
+}
+
+#aboutSkeleton p{
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+
+#aboutSkeleton:hover{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border: 2px solid #202020;
+    border-radius: 20px;
+}
+
+
+
+
+#numberTalk{
+    text-align: center;
+    font-size: 60px;
+    font-family: titles2;
+}
+
+#bigSkeletonNumber{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.2s;
+    border: 1px solid rgba(255, 166, 0, 0.027);
+}
+
+#bigSkeletonNumber:hover{
+    border: 1px solid orange;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#numberHr{
+    margin: 30px;
+    margin-right: 10%;
+    margin-left: 10%;
+    border-color: rgb(37, 37, 37);
+    border-radius: 20px;
+    border-style:groove;
+    
+}
+
+
+#numberSkeleton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px;
+    background-color: rgba(31, 31, 31, 0.199);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.numberCard{
+    background-color: rgb(10, 10, 10);
+    padding: 15px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.2s;
+}
+
+.numberCard h1{
+    font-family: titles1;
+    color: orange;
+    font-size: 40px;
+    text-shadow: 0px 0px 10px orange;
+}
+
+.numberCard:hover{
+    background-color: rgb(26, 26, 26);
+    padding: 80px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    border: 2px solid orange;
+}
+
+#spotifySkeleton{
+    padding: 30px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+    background-image: url(/Assets/images/spotify.png);
+    background-size: cover;
+}
+
