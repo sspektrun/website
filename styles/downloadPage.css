@@ -103,7 +103,7 @@ hr{
 }
 
 #catAndroid .titleDiv{
-    background-image: url(/assets/images/downloadsImages/android-wallpaper.jpg);
+    background-image: url("../assets/images/downloadsImages/android-wallpaper.jpg");
 }
 
 
