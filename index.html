@@ -16,15 +16,33 @@
     <title>Spektrun Website</title>
 </head>
 <header id="navBarMain">
-    <img id="navBarImage" src="assets/images/LOGOS/s white.png" alt="Spektrun Logo" width="40px" height="40px">
-
+    <img id="navBarImage" src="assets/images/LOGOS/s white.png" alt="Spektrun Logo" width="40" height="40">
+  
+    <button id="menuToggle" class="hamburger" aria-label="Menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  
+    <nav id="mobileMenu" aria-hidden="true">
+      <a class="navLink" href="index.html">Home</a>
+      <a class="navLink" href="about.html">About</a>
+      <a class="navLink" href="downloads.html">Downloads</a>
+      <a class="navLink" href="user-manual.html">User Manual</a>
+    </nav>
+  
     <div id="navBarLinks">
-        <a class="navLink" id="navLinkSelected" href="index.html">Home</a><p>/</p>
-        <a class="navLink" href="about.html">About</a><p>/</p>
-        <a class="navLink" href="downloads.html">Downloads</a><p>/</p>
-        <a class="navLink" href="user-manual.html">User Manual</a>
+      <a class="navLink" id="navLinkSelected" href="index.html">Home</a><p>/</p>
+      <a class="navLink" href="about.html">About</a><p>/</p>
+      <a class="navLink" href="downloads.html">Downloads</a><p>/</p>
+      <a class="navLink" href="user-manual.html">User Manual</a>
     </div>
 </header>
+  
+  
+  
+ 
+
 <body>
     <div id="mainBodySkeleton">
         <script src="scripts/changingWord.js"></script>
@@ -98,39 +116,20 @@
     </div>
    
 
-    
-
-   
-    <!--
-      <div id="changingWordsContainers">
-                    <p>The music app that cares for the client</p>
-                </div>
-                <div class="word-container">
-                    <p id="word" class="word">WANT</p>
-                </div>
-    
-    <div id="loaderSkeleton">
-        <div class="lds-heart"><p>SPEKTRUN</p><div></div></div>
-    </div>
-    <script src="scripts/loadingScreen.js"></script> 
-    
-    
-    
-    -->
-    
-    
-
     <footer>
         <div id="first-part">
             
         </div>
 
         <div id="second-part">
-            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Spektrun project</span> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://a-ce-v.github.io/acv.github.io/index.html">Adrián Castillo Vega</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
+            <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">Spektrun project</span> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://a-ce-v.github.io/acv.github.io/index.html">ACV</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
         </div>
 
     </footer>
+
+
     <script src="scripts/scripts.js"></script>
-    
+    <script src="scripts/dropdownlist.js"></script>
+
 </body>
 </html>

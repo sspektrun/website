@@ -1,59 +1,154 @@
-
-
 @media screen and (max-width: 768px) {
-   
-    #navBarMain {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    #navBarLinks {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    #navBarLinks p {
-      display: none;
-    }
-  
-   
-    #logoSection h1 {
-      font-size: 60px; 
-    }
-  
-    #logoSection h3 {
-      font-size: 16px;
-    }
-  
-    #downloadSkeleton h1 {
-      font-size: 32px;
-      padding: 0 10px;
-      line-height: 1;
-    }
-  
-    #downloadSkeleton p {
-      padding: 0 10px;
-    }
-
-    #numberSkeleton {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .numberCard,
-    .numberCard:hover {
-      padding: 40px 20px;
-      width: 90%;
-      border: none;
-      background-color: rgb(10, 10, 10);
-      margin: 10px 0;
-      transition: none;
-    }
-  
-    #bigSkeletonNumber,
-    #bigSkeletonNumber:hover {
-      padding: 0;
-      border: none;
-    }
+  body {
+    font-size: 16px;
   }
-  
+
+  #navBarMain {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #navBarLinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #navBarLinks p {
+    display: none;
+  }
+
+  #logoSection {
+    padding: 20px;
+  }
+
+  #logoSection h1 {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+
+  #logoSection h3 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  #downloadSkeleton {
+    padding: 40px 20px;
+  }
+
+  #downloadSkeleton h1 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  #downloadSkeleton p {
+    font-size: 16px;
+  }
+
+  #aboutSkeleton {
+    padding: 30px 15px;
+  }
+
+  #aboutSkeleton h1 {
+    font-size: 32px;
+  }
+
+  #aboutSkeleton p {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  #numberTalk {
+    font-size: 32px;
+  }
+
+  .numberCard h1 {
+    font-size: 28px;
+  }
+
+  .numberCard p {
+    font-size: 14px;
+  }
+
+  #numberSkeleton {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .numberCard,
+  .numberCard:hover {
+    padding: 20px;
+    width: 90%;
+    border: none;
+    background-color: rgb(10, 10, 10);
+    margin: 10px 0;
+    transition: none;
+  }
+
+  #bigSkeletonNumber,
+  #bigSkeletonNumber:hover {
+    padding: 0;
+    border: none;
+  }
+
+  a.button {
+    font-size: 16px;
+    padding: 12px 20px;
+    display: inline-block;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #downloadSkeleton:hover {
+    padding: 40px 20px; 
+    border: none;
+    box-shadow: none;
+}
+#aboutSkeleton:hover {
+    padding: 30px 15px;
+    border: none;
+    box-shadow: none;
+}
+}
+
+@media screen and (max-width: 480px) {
+  #logoSection h1 {
+    font-size: 36px;
+  }
+
+  #aboutSkeleton h1 {
+    font-size: 28px;
+  }
+
+  .numberCard h1 {
+    font-size: 24px;
+  }
+
+  #numberTalk {
+    font-size: 28px;
+  }
+
+  a.button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  #downloadSkeleton:hover {
+    padding: 40px 20px;
+    border: none;
+    box-shadow: none;
+  }
+  #aboutSkeleton:hover {
+    padding: 30px 15px;
+    border: none;
+    box-shadow: none;
+  }
+
+}
+
+

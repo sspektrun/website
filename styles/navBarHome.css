@@ -1,81 +1,171 @@
-
+/* -----------------------------------------
+   Font faces (as before)
+----------------------------------------- */
 @font-face {
     font-family: 'buttons-font'; 
     src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
 }
-
-
 @font-face {
     font-family: 'logo-font'; 
     src: url('../assets/fonts/zmore/logo/basenue.ttf'); 
 }
 
-
+/* -----------------------------------------
+   Header base
+----------------------------------------- */
 #navBarMain {
     background-color: rgb(0, 0, 0);
     backdrop-filter: blur(50%);
     -webkit-backdrop-filter: blur(50%);
     padding: 20px;
     display: flex;
-    align-items: center;
+    align-items: center;           /* vertical centering */
+    justify-content: space-between;/* space between logo and links/button */
     border-bottom: 2px solid orange;
-    opacity: 70%;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-duration: 0.8s;
-    z-index: 1;
+    opacity: 0.7;                  /* 70% */
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
+    z-index: 100;                  /* higher to overlay content */
 }
-
-#navBarMain:hover{
-    opacity: 100%;
+#navBarMain:hover {
+    opacity: 1;
     border-bottom: 4px solid orange;
 }
 
+/* Logo image */
+#navBarImage {
+    filter: grayscale(100%);
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
+    /* width/height attributes come from HTML */
+}
 
-#navBarLinks{
+/* Desktop links */
+#navBarLinks {
     display: flex;
     align-items: center;
     color: white;
     padding: 5px;
-    text-align: center;
     margin-left: 10px;
     font-family: buttons-font;
 }
-
-.navLink{
+.navLink {
     text-decoration: none;
     padding: 10px;
-    text-decoration: none;
     color: gray;
     border-radius: 20px;
-    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
-    transition-duration: 0.3s;
+    transition: cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s;
 }
-
-.navLink:hover{
+.navLink:hover {
     color: orange;
     padding: 14px;
     text-shadow: 0px 0px 10px orange;
 }
-
-#navLinkSelected{
+#navLinkSelected {
     color: white;
     padding: 10px;
     text-shadow: 0px 0px 5px white;
 }
-
-#navLinkSelected:hover{
+#navLinkSelected:hover {
     color: orange;
     padding: 14px;
     text-shadow: 0px 0px 10px orange;
 }
 
-#navBarImage{
-    filter: grayscale(100%);
-    transition: cubic-bezier(0.39, 0.575, 0.565, 1);
-    transition-duration: 0.3s;
+/* -----------------------------------------
+   Hamburger button: three bars
+----------------------------------------- */
+.hamburger {
+    display: none; /* shown only on mobile via media query */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto; /* push to right */
+    z-index: 101;
+}
+.hamburger .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Open state: transform bars into an X */
+.hamburger.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
 }
 
-#navBarTitle{
-    font-family: logo-font;
-    color: white;
+/* -----------------------------------------
+   Mobile menu from right side (with overflow scroll)
+----------------------------------------- */
+/* Mobile menu from right side: full viewport height and scrollable */
+#mobileMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;           /* hide off-canvas fully */
+    width: 240px;
+    height: 100vh;          /* full viewport height */
+    background-color: black;
+    padding-top: 80px;      /* space for header overlap */
+    transition: right 0.4s ease;
+    z-index: 100;           /* below the hamburger toggle */
+    opacity: 1;
+    border-left: 2px solid orange;
+    overflow-y: auto;       /* allow scrolling if content too tall */
+}
+
+/* When menu is open, bring it fully into view */
+#mobileMenu.show {
+    right: 0;
+}
+
+#mobileMenu a {
+    padding: 15px 25px;
+    font-size: 18px;
+    color: gray;
+    text-decoration: none;
+    font-family: buttons-font;
+    transition: all 0.3s;
+}
+#mobileMenu a:hover {
+    color: orange;
+    text-shadow: 0px 0px 10px orange;
+}
+
+/* -----------------------------------------
+   Responsive: show hamburger, hide desktop links
+----------------------------------------- */
+@media (max-width: 768px) {
+    /* Show hamburger toggle */
+    #menuToggle.hamburger {
+        display: flex;
+    }
+    /* Hide desktop links */
+    #navBarLinks {
+        display: none;
+    }
+    /* Header: keep row layout, vertical center */
+    #navBarMain {
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: space-between;
+        opacity: 1 !important;
+        padding: 10px 15px;
+    }
+    #navBarImage,
+    #menuToggle {
+        align-self: center;
+    }
 }

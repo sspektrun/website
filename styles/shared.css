@@ -1,11 +1,19 @@
 @font-face {
     font-family: 'buttonText'; 
-    src: url('../Assets/fonts/zmore/TSBlockBold.ttf'); 
+    src: url('../assets/fonts/zmore/TSBlockBold.ttf'); 
 }
 
+@font-face {
+    font-family: 'notoSans'; 
+    src: url('../assets/fonts/notoSans/NotoSans-Regular.ttf'); 
+}
 
 body::selection{
     background-color: #ffa500;
+}
+
+body{
+    font-family: notoSans;
 }
 
 .button{
@@ -57,4 +65,17 @@ body::selection{
     padding-right: 50px;
     border: 2px solid orange;
     box-shadow: 0px 0px 20px orange;
+}
+
+
+@media (max-width: 768px) {
+    .button:hover {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    #last-release .button:hover {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

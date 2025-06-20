@@ -1,0 +1,228 @@
+/* ================================
+   Responsive Overrides for Downloads
+   ================================ */
+
+/* --------------------------------
+   Base overrides (<=1024px)
+---------------------------------*/
+@media screen and (max-width: 1024px) {
+    /* Container adjustments */
+    #downloadsSkeleton {
+      margin: 20px auto !important;
+      padding: 20px !important;
+      width: auto;
+    }
+    /* Title */
+    #downloadTitle h1 {
+      font-size: 2.5rem !important;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .hrOrange {
+      margin: 15px auto !important;
+      width: 80%;
+    }
+    /* Intro paragraph */
+    #donwloadBodySkeleton > p {
+      font-size: 1rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 15px !important;
+    }
+    /* Body wrapper */
+    #donwloadBodySkeleton {
+      margin: 0 auto !important;
+      padding: 15px !important;
+      background-color: #141414;
+      border-radius: 10px;
+    }
+    /* Each section box */
+    .downloadCatSkeleton {
+      padding: 20px !important;
+      margin: 0 0 20px 0 !important;
+      border-radius: 10px;
+      border: 1px solid rgba(255,166,0,0.2);
+      background-color: #0e0e0e;
+    }
+    /* “Android Releases” title */
+    .titleDiv h1 {
+      font-size: 2rem !important;  /* ~32px on tablets */
+      margin: 10px 0 !important;
+    }
+    /* Section hr */
+    .downloadCatSkeleton hr {
+      margin: 10px 0 !important;
+    }
+    /* download list container */
+    #downloadList {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 15px !important;
+      margin: 10px 0 !important;
+    }
+    /* If there’s a static paragraph in catProject */
+    #catProject p {
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+    }
+}
+
+/* --------------------------------
+   Tablet/mobile (<=768px)
+---------------------------------*/
+@media screen and (max-width: 768px) {
+    /* Container */
+    #downloadsSkeleton {
+      margin: 15px auto !important;
+      padding: 15px !important;
+    }
+    /* Title */
+    #downloadTitle h1 {
+      font-size: 2rem !important;   /* ~32px */
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .hrOrange {
+      margin: 10px auto !important;
+      width: 90%;
+    }
+    /* Intro paragraph */
+    #donwloadBodySkeleton > p {
+      font-size: 0.95rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+    /* Body wrapper */
+    #donwloadBodySkeleton {
+      padding: 10px !important;
+    }
+    /* Section box */
+    .downloadCatSkeleton {
+      padding: 15px !important;
+      margin: 0 0 15px 0 !important;
+    }
+    /* “Android Releases” title smaller */
+    .titleDiv h1 {
+      font-size: 1.5rem !important; /* ~24px */
+      margin: 8px 0 !important;
+    }
+    /* Ensure titleDiv image also scales */
+    .titleDiv img {
+      width: 60px !important;
+      height: 60px !important;
+    }
+    /* Section hr */
+    .downloadCatSkeleton hr {
+      margin: 8px 0 !important;
+    }
+    /* download list container */
+    #downloadList {
+      gap: 12px !important;
+      margin: 8px 0 !important;
+    }
+    /* Download-item adjustments: smaller layout */
+    .download-item {
+      padding: 12px !important;
+      border-radius: 8px;
+      /* Keep flex row on tablets; if too cramped, stacking on smaller: */
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Download button smaller & hover toned down */
+    .download-item .button {
+      font-size: 0.9rem !important;
+      padding: 10px 15px !important;
+    }
+    .download-item .button:hover {
+      padding: 12px 18px !important;
+      box-shadow: 0px 0px 10px orange !important;
+    }
+    /* If text/label inside download-item: ensure wrapping or truncation if needed */
+    .download-item span, .download-item .version-label {
+      font-size: 0.95rem !important;
+    }
+}
+
+/* --------------------------------
+   Small mobile (<=480px)
+---------------------------------*/
+@media screen and (max-width: 480px) {
+    /* Container adjustments */
+    #downloadsSkeleton {
+      margin: 10px auto !important;
+      padding: 10px !important;
+    }
+    #donwloadBodySkeleton {
+      padding: 8px !important;
+      margin: 0 auto !important;
+    }
+    /* Title */
+    #downloadTitle h1 {
+      font-size: 1.5rem !important;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .hrOrange {
+      margin: 8px auto !important;
+      width: 95%;
+    }
+    /* Intro paragraph */
+    #donwloadBodySkeleton > p {
+      font-size: 0.9rem !important;
+      line-height: 1.5 !important;
+      margin-bottom: 10px !important;
+    }
+    /* Section box */
+    .downloadCatSkeleton {
+      padding: 15px 10px 10px 10px !important; /* extra top padding */
+      margin: 0 0 10px 0 !important;
+    }
+    /* “Android Releases” title */
+    .titleDiv h1 {
+      font-size: 1.25rem !important;
+      margin: 6px 0 !important;
+    }
+    .titleDiv img {
+      width: 50px !important;
+      height: 50px !important;
+    }
+    .downloadCatSkeleton hr {
+      margin: 6px 0 !important;
+    }
+    /* download list container */
+    #downloadList {
+      gap: 8px !important;
+      margin: 6px 0 !important;
+      padding-top: 10px !important;
+    }
+    /* Stack items full-width */
+    .download-item {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      box-sizing: border-box;
+      padding-top: 16px !important;
+      padding-bottom: 12px !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      gap: 8px;
+    }
+    .download-item .button {
+      align-self: stretch !important;
+      text-align: center;
+      font-size: 0.8rem !important;
+      padding: 8px 12px !important;
+    }
+    .download-item .button:hover {
+      padding: 10px 14px !important;
+      box-shadow: 0px 0px 8px orange !important;
+    }
+    .download-item .version-label,
+    .download-item span {
+      display: block;
+      width: 100%;
+      font-size: 0.9rem !important;
+      margin-bottom: 4px;
+    }
+}
