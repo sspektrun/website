@@ -5,6 +5,8 @@
 /* --------------------------------
    Base overrides (for widths <=1024px)
 ---------------------------------*/
+
+
 @media screen and (max-width: 1024px) {
     /* Container adjustments */
     #downloadsSkeleton {
@@ -71,6 +73,7 @@
      Tablet/mobile (<=768px)
   ---------------------------------*/
   @media screen and (max-width: 768px) {
+   
     /* Container */
     #downloadsSkeleton {
       margin: 15px auto !important;

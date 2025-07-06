@@ -8,12 +8,56 @@
     src: url('../assets/fonts/notoSans/NotoSans-Regular.ttf'); 
 }
 
+@font-face {
+    font-family: 'spektrun'; 
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
+}
+
+@font-face {
+    font-family: 'nofex'; 
+    src: url('../assets/fonts/zaditionalz/Nofex.otf'); 
+}
+
+@font-face {
+    font-family: 'titles1'; 
+    src: url('../assets/fonts/zmore/AkiraExpandedDemo.otf'); 
+}
+
+@font-face {
+    font-family: 'titles2'; 
+    src: url('../assets/fonts/zmore/StretchPro.otf'); 
+}
+
+@font-face {
+    font-family: 'text1'; 
+    src: url('../assets/fonts/zmore/Cocogoose-Pro-Regular-trial.ttf'); 
+}
+
+@font-face {
+    font-family: 'buttonText'; 
+    src: url('../assets/fonts/zmore/TSBlockBold.ttf'); 
+}
+
+:root {
+    --orange: #ff6f00;
+    --bg-dark: #0d0d0d;
+    --bg-light: #1a1a1a;
+    --bg-glass: rgba(255, 255, 255, 0.06);
+    --border-glass: rgba(255, 255, 255, 0.15);
+    --highlight: linear-gradient(135deg, #ff6f00 0%, #ff9100 100%);
+}
+
 body::selection{
-    background-color: #ffa500;
+    background-color: var(--orange);
 }
 
 body{
     font-family: notoSans;
+    padding-top: 70px;
+}
+
+h1, h2{
+    font-family: buttonText;
 }
 
 .button{
@@ -67,6 +111,16 @@ body{
     box-shadow: 0px 0px 20px orange;
 }
 
+blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--orange);
+    padding: 1rem;
+    margin: 1rem 0;
+    color: #bbb;
+    font-style: italic;
+}
+
+
 
 @media (max-width: 768px) {
     .button:hover {
@@ -77,5 +131,9 @@ body{
     #last-release .button:hover {
         padding-left: 30px;
         padding-right: 30px;
+    }
+
+    body {
+        padding-top: 60px;
     }
 }

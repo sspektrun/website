@@ -1,8 +1,12 @@
 .dropdown-item {
     margin-bottom: 10px;
-    border: 1px solid orange;
+    border: 1px solid gray;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden;   
+}
+
+.dropdown-item:hover{
+    border: 1px solid orange;
 }
 
 .dropdown-toggle {
@@ -19,7 +23,8 @@
 }
 
 .dropdown-toggle:hover {
-    background-color: #222;
+    background-color: #141414;
+    
 }
 
 .dropdown-content {
@@ -28,7 +33,7 @@
     background-color: #111;
     color: white;
     padding: 0 15px;
-    transition: max-height 0.3s ease-out;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 }
 
 .dropdown-item.open .dropdown-content {

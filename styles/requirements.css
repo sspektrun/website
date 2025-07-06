@@ -1,0 +1,106 @@
+:root {
+    --orange: #ff6f00;
+    --bg-dark: #0d0d0d;
+    --bg-light: #1a1a1a;
+    --bg-glass: rgba(255, 255, 255, 0.06);
+    --border-glass: rgba(255, 255, 255, 0.15);
+    --highlight: linear-gradient(135deg, #ff6f00 0%, #ff9100 100%);
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-light));
+    color: #eee;
+    overflow-x: hidden;
+  }
+
+  header {
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background: var(--bg-dark);
+    border-bottom: 1px solid var(--border-glass);
+    backdrop-filter: blur(12px);
+  }
+  header h1 {
+    background: var(--highlight);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.4rem;
+    margin: 0;
+    font-weight: 800;
+  }
+
+  .section {
+    max-width: 1300px;
+    margin: 4rem auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .req-box {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(25px);
+    border-radius: 24px;
+    padding: 2.5rem 3rem;
+    flex: 1 1 300px;
+    min-width: 280px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  .req-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  }
+  .req-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    background: var(--highlight);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .req-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+  .req-box li {
+    margin-bottom: 0.8rem;
+  }
+
+  .req-box.recommended {
+    border: 2px solid var(--orange);
+    background: linear-gradient(145deg, rgba(255, 111, 0, 0.2), rgba(255, 255, 255, 0.07));
+  }
+  .req-box.recommended::before {
+    content: "★ Recommended";
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    background: var(--highlight);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 12px;
+  }
+
+
+  @media (max-width: 768px) {
+    .section {
+      flex-direction: column;
+      padding: 1rem;
+    }
+    .req-box {
+      padding: 2rem;
+      width: 100%;
+    }
+  }

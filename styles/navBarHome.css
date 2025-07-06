@@ -14,21 +14,26 @@
    Header base
 ----------------------------------------- */
 #navBarMain {
-    background-color: rgb(0, 0, 0);
-    backdrop-filter: blur(50%);
-    -webkit-backdrop-filter: blur(50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);  
     padding: 20px;
     display: flex;
+    position: fixed;
     align-items: center;           /* vertical centering */
     justify-content: space-between;/* space between logo and links/button */
     border-bottom: 2px solid orange;
-    opacity: 0.7;                  /* 70% */
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.8s;
-    z-index: 100;                  /* higher to overlay content */
+    top: 0;            /* Aligns it to the very top */
+    left: 0;           /* Stretch it from left */
+    right: 0;          /* Stretch it to right */
+    z-index: 9999;   
 }
+
 #navBarMain:hover {
-    opacity: 1;
+    background-color: rgba(0, 0, 0, 1);
     border-bottom: 4px solid orange;
+    
 }
 
 /* Logo image */

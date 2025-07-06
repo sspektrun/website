@@ -30,6 +30,7 @@
 
 
 body{
+    padding-top: 70px;
     margin: 0px;
     background-color: black;
     background-size: cover;
@@ -38,7 +39,6 @@ body{
     margin: auto;
     font-family: Helvetica;
     color: white;
-    
 }
 
 #backgroundVideo{
@@ -52,10 +52,12 @@ body{
     border: 1px solid rgb(104, 104, 104);
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    padding-bottom: 120px;
+    padding-top: 175px;
+    padding-bottom: 175px;
+    text-align: center;
+    align-items: center;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1);
     transition-duration: 0.3s;
-    
 }
 
 #mainSkeleton:hover{
