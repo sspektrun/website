@@ -95,6 +95,7 @@ body {
   
   /* Requirements */
   .requirements {
+
     padding: 4rem 2rem;
     display: flex;
     flex-wrap: wrap;

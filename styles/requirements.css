@@ -80,6 +80,7 @@
     border: 2px solid var(--orange);
     background: linear-gradient(145deg, rgba(255, 111, 0, 0.2), rgba(255, 255, 255, 0.07));
   }
+  
   .req-box.recommended::before {
     content: "★ Recommended";
     position: absolute;

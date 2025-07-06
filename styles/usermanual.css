@@ -25,6 +25,7 @@
 .dropdown-toggle:hover {
     background-color: #141414;
     
+    
 }
 
 .dropdown-content {
@@ -33,6 +34,7 @@
     background-color: #111;
     color: white;
     padding: 0 15px;
+
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 }
 

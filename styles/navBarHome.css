@@ -28,6 +28,7 @@
     left: 0;           /* Stretch it from left */
     right: 0;          /* Stretch it to right */
     z-index: 9999;   
+    
 }
 
 #navBarMain:hover {
